@@ -1,0 +1,21 @@
+[tool.poetry]
+    authors      = ["Lucas Parzianello <lparzianello@nd.edu>"]
+    description  = "A FastAPI app with HTMX front-end"
+    name         = "fastapi-htmx-app"
+    package-mode = false
+    version      = "0.1.0"
+
+    [tool.poetry.dependencies]
+        fastapi = "^0.111"
+        jinja2  = "^3.1"
+        python  = "^3.12"
+
+    [tool.poetry.group.dev.dependencies]
+        deptry = "^0.16"
+        djlint = "^1.34"
+        pylint = "^3.2"
+        pytest = "^8.2"
+
+[build-system]
+    build-backend = "poetry.core.masonry.api"
+    requires      = ["poetry-core>=1.0.0"]

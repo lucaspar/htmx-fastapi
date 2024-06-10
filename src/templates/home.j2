@@ -1,0 +1,26 @@
+{% extends "base.j2" %} {% block title %}
+{{ common.website_name if common.website_name else "Home | FastAPI HTMX App" }}
+{% endblock title %} {% block content %}
+<div class="md-8">
+    <div class="row">
+        <h1>FastAPI HTMX App</h1>
+    </div>
+    <div class="row">
+        <p>Click the button below to load content using HTMX.</p>
+    </div>
+    <div class="row">
+        <div id="content">
+            <button
+                class="btn btn-primary"
+                hx-get="{{ hx_get_url }}"
+                hx-trigger="click"
+                hx-target="#content"
+                hx-swap="outerHTML"
+            >
+                Load Content
+            </button>
+            <!-- Initial content will be loaded here -->
+        </div>
+    </div>
+</div>
+{% endblock content %}

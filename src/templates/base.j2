@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ common.language | default("en") }}"
+      data-bs-theme="{{ common.theme | default("dark") }}">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            {% block title %}
+            {% endblock title %}
+        </title>
+        <meta name="description" content="FastAPI HTMX App">
+        <meta name="keywords" content="FastAPI, HTMX, Boilerplate">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="shortcut icon"
+              type="image/png"
+              href="{{ url_for('static', path='images/favicon.svg') }}">
+        <link rel="stylesheet"
+              href="{{ url_for('static', path='css/bootstrap.min.css') }}">
+        <link rel="stylesheet"
+              href="{{ url_for('static', path='css/styles.css ') }}">
+        <script src="{{ url_for('static', path='js/htmx.min.js') }}"></script>
+        <script src="{{ url_for('static', path='js/bootstrap.bundle.min.js') }}"></script>
+    </head>
+    <body class="container">
+        {% block content %}
+        {% endblock content %}
+    </body>
+</html>

@@ -1,0 +1,21 @@
+{
+    "folders": [
+        {
+            "path": ".",
+            "name": "htmx-fastapi",
+        }
+    ],
+    "settings": {},
+    "extensions": {
+        "recommendations": [
+            "charliermarsh.ruff",
+            "monosans.djlint",
+            "ms-python.python",
+            "ms-toolsai.jupyter",
+            "usernamehw.errorlens",
+            "wholroyd.jinja",
+            "formulahendry.auto-complete-tag",
+            "otovo-oss.htmx-tags",
+        ]
+    }
+}
