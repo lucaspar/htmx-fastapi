@@ -1,14 +1,27 @@
 """Settings for the web application."""
 
+from rich import traceback
+
+traceback.install(
+    width=120,
+    word_wrap=True,
+    show_locals=True,
+)
+
 
 class _Settings:
     """Settings for the web application."""
 
     _app_root: str = "src"
     _static_root: str = "/static"
+    app_description: str = "A demonstration of HTMX with FastAPI."
+    app_name: str = "HTMX Demo"
+    app_version: str = "0.1"
     host: str = "localhost"
+    language: str = "en-US"
     port: int = 8000
     protocol: str = "http"
+    theme: str = "dark"
 
     def __init__(self, **kwargs) -> None:
         self.__dict__.update(kwargs)

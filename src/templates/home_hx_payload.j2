@@ -1,5 +1,9 @@
-<p>Content loaded!</p>
-
-<button onclick="window.location.reload();" class="btn btn-success">
-    Reload home
-</button>
+<div class="row">
+    <p>Content loaded!</p>
+    <p>{{ payload if payload is defined else '::No payload::' }}</p>
+</div>
+<div class="row">
+    <div class="md-6">
+        <button onclick="window.location.reload();" class="btn btn-success">Reload home</button>
+    </div>
+</div>

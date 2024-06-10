@@ -6,20 +6,13 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from rich import traceback
 
 from src.config import settings
 
-traceback.install(
-    width=120,
-    word_wrap=True,
-    show_locals=True,
-)
-
 app = FastAPI(
-    title="HTMX Demo",
-    description="A demonstration of HTMX with FastAPI.",
-    version="0.1",
+    title=settings.app_name,
+    description=settings.app_description,
+    version=settings.app_version,
 )
 
 app.mount(
@@ -31,10 +24,10 @@ app.mount(
 renderer = Jinja2Templates(directory=settings.dir_templates)
 default_context = {
     "common": {
-        "title": "HTMX Demo",
-        "description": "A demonstration of HTMX with FastAPI.",
-        "language": "en-US",
-        "theme": "dark",
+        "title": settings.app_name,
+        "description": settings.app_description,
+        "language": settings.language,
+        "theme": settings.theme,
     },
 }
 
@@ -72,5 +65,5 @@ async def read_content(request: Request) -> HTMLResponse:
     return renderer.TemplateResponse(
         name=templates.HOME_HX_PAYLOAD.value,
         request=request,
-        context=default_context | {"payload": "This is a payload."},
+        context=default_context | {"payload": "This is a payload from the server."},
     )
