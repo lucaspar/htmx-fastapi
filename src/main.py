@@ -32,38 +32,38 @@ default_context = {
 }
 
 
-class templates(StrEnum):
+class Templates(StrEnum):
     """Templates for the main route."""
 
     HOME = "home.j2"
     HOME_HX_PAYLOAD = "home_hx_payload.j2"
 
 
-class urls(StrEnum):
+class URLs(StrEnum):
     """URLs for the main route."""
 
     HOME = "/"
     HOME_HX_PAYLOAD = "/home-payload"
 
 
-@app.get(urls.HOME, response_class=HTMLResponse)
+@app.get(URLs.HOME, response_class=HTMLResponse)
 async def read_root(request: Request) -> HTMLResponse:
     """Renders the main page."""
     return renderer.TemplateResponse(
-        name=templates.HOME.value,
+        name=Templates.HOME.value,
         request=request,
         context=default_context
         | {
-            "hx_get_url": urls.HOME_HX_PAYLOAD.value,
+            "hx_get_url": URLs.HOME_HX_PAYLOAD.value,
         },
     )
 
 
-@app.get(urls.HOME_HX_PAYLOAD, response_class=HTMLResponse)
+@app.get(URLs.HOME_HX_PAYLOAD, response_class=HTMLResponse)
 async def read_content(request: Request) -> HTMLResponse:
     """Renders the content page."""
     return renderer.TemplateResponse(
-        name=templates.HOME_HX_PAYLOAD.value,
+        name=Templates.HOME_HX_PAYLOAD.value,
         request=request,
         context=default_context | {"payload": "This is a payload from the server."},
     )
