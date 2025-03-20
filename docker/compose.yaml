@@ -7,10 +7,9 @@ services:
                 - UID=${UID}
                 - GID=${GID}
         user: "${UID}:${GID}"
-        environment:
-            - UID=${UID}
-            - GID=${GID}
         command: "bash -c 'uv run --dev uvicorn src.main:app --host 0.0.0.0 --reload --port 8000'"
+        env_file:
+            - docker.env
         develop:
             watch:
                 # https://docs.docker.com/compose/how-tos/file-watch/#sync--restart

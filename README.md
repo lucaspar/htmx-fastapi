@@ -2,12 +2,6 @@
 
 This is a simple FastAPI application that serves an HTMX front-end.
 
-## Setup
-
-```bash
-docker compose up --build
-```
-
 The application will be available at [`localhost:18000`](http://localhost:18000).
 
 ## Development
