@@ -16,7 +16,7 @@ make develop
 
 Access the application at [`localhost:18000`](http://localhost:18000).
 
-> Port 18000 is configurable in [`docker.env`](docker.env).
+> Port 18000 is configurable in [`docker.env`](docker/docker.env).
 
 ### Testing
 
@@ -24,7 +24,3 @@ Access the application at [`localhost:18000`](http://localhost:18000).
 # install uv in the host machine to run the tests
 make test
 ```
-
-## Usage
-
-Navigate to `http://localhost:8000` in your web browser to view the HTMX front-end.

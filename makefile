@@ -3,7 +3,7 @@
 ENV_FILE=docker/docker.env
 COMPOSE_FILE=docker/compose.yaml
 
-redeploy: pull build down up logs
+redeploy: pull build down up-daemon logs
 develop: pull build down up-dev
 
 down:
@@ -15,7 +15,7 @@ pull:
 build:
 	docker compose --env-file=$(ENV_FILE) --file=$(COMPOSE_FILE) build
 
-up:
+up-daemon:
 	docker compose --env-file=$(ENV_FILE) --file=$(COMPOSE_FILE) up -d
 
 up-dev:
