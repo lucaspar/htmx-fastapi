@@ -1,0 +1,6 @@
+./.pytest_cache
+./htmx-fastapi.code-workspace
+./makefile
+.git
+.venv
+*.md

@@ -1,0 +1,21 @@
+services:
+    web:
+        build:
+            context: ..
+            dockerfile: docker/dockerfile
+            args:
+                - UID=${UID}
+                - GID=${GID}
+        user: "${UID}:${GID}"
+        environment:
+            - UID=${UID}
+            - GID=${GID}
+        command: "bash -c 'uv run --dev uvicorn src.main:app --host 0.0.0.0 --reload --port 8000'"
+        develop:
+            watch:
+                # https://docs.docker.com/compose/how-tos/file-watch/#sync--restart
+                - action: sync+restart
+                  path: ../
+                  target: /app/
+        ports:
+            - "${SERVER_PORT}:8000"

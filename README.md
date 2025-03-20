@@ -13,27 +13,24 @@ The application will be available at [`localhost:18000`](http://localhost:18000)
 ## Development
 
 ```bash
-poetry install --sync
+# install packages locally for local editor linter, formatter, etc
+uv sync --dev
+
+# start the development server
+make develop
 ```
 
-### Development Server
+Access the application at [`localhost:18000`](http://localhost:18000).
 
-```bash
-poetry run uvicorn src.main:app --reload --port 8001
-```
-
-Access the application at [`localhost:8001`](http://localhost:8001).
+> Port 18000 is configurable in [`docker.env`](docker.env).
 
 ### Testing
 
 ```bash
-poetry run pytest --strict-config --capture=no
+# install uv in the host machine to run the tests
+make test
 ```
 
 ## Usage
 
 Navigate to `http://localhost:8000` in your web browser to view the HTMX front-end.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)

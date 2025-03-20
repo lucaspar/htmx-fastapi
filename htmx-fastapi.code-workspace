@@ -1,11 +1,4 @@
 {
-    "folders": [
-        {
-            "path": ".",
-            "name": "htmx-fastapi",
-        }
-    ],
-    "settings": {},
     "extensions": {
         "recommendations": [
             "charliermarsh.ruff",
@@ -15,7 +8,14 @@
             "usernamehw.errorlens",
             "wholroyd.jinja",
             "formulahendry.auto-complete-tag",
-            "otovo-oss.htmx-tags",
+            "otovo-oss.htmx-tags"
         ]
-    }
+    },
+    "folders": [
+        {
+            "name": "htmx-fastapi",
+            "path": "."
+        }
+    ],
+    "settings": {}
 }
