@@ -4,7 +4,7 @@ compose_file := "docker/compose.yaml"
 
 alias dev := develop
 
-# redeploys the application
+# redeploys the application in daemon mode
 redeploy: pull build down up-daemon logs
 
 # starts the development server

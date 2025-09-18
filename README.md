@@ -2,23 +2,21 @@
 
 This is a simple FastAPI application that serves an HTMX front-end.
 
-## Development
+## Getting Started
 
 ```bash
-# install packages locally for local editor linter, formatter, etc
-uv sync --dev
-
-# start the development server
-make develop
+just --list
 ```
 
-Access the application at [`localhost:18000`](http://localhost:18000).
-
-> Port 18000 is configurable in [`docker.env`](docker/docker.env).
-
-### Testing
-
-```bash
-# install uv in the host machine to run the tests
-make test
+```log
+Available recipes:
+    build     # builds the application
+    develop   # starts the development server [alias: dev]
+    down      # stops the application
+    logs      # shows the logs
+    pull      # pulls the latest images
+    redeploy  # redeploys the application in daemon mode
+    test      # runs the tests
+    up-daemon # starts the application in daemon mode
+    up-dev    # starts the application in development mode
 ```
