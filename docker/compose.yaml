@@ -1,13 +1,14 @@
 services:
     web:
+        user: "${UID}:${GID}"
+        container_name: "htmx-fastapi"
+        command: "bash -c 'uv run --dev uvicorn src.main:app --host 0.0.0.0 --reload --port 8000'"
         build:
             context: ..
             dockerfile: docker/dockerfile
             args:
                 - UID=${UID}
                 - GID=${GID}
-        user: "${UID}:${GID}"
-        command: "bash -c 'uv run --dev uvicorn src.main:app --host 0.0.0.0 --reload --port 8000'"
         env_file:
             - docker.env
         develop:
